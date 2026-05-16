@@ -1,0 +1,36 @@
+# Environnement Conda pour le pipeline de génération des statistiques
+# de zone de chalandise (étude de marché DJA — EARL La Petite Claye des Champs).
+#
+# Création de l'environnement :
+#     conda env create -f environment.yaml
+#
+# Activation :
+#     conda activate zone-chalandise
+#
+# Mise à jour si environment.yaml change :
+#     conda env update -f environment.yaml --prune
+
+name: zone-chalandise
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.12
+
+  # Géospatial — lecture des GeoPackages QGIS et des carreaux INSEE,
+  # intersections, agrégations spatiales
+  - geopandas>=1.0
+  - shapely>=2.0
+  - pyproj>=3.6
+
+  # Données tabulaires
+  - pandas>=2.0
+  # NB : pas d'openpyxl, le format de sortie est CSV à plat (pas xlsx)
+
+  # Téléchargement / décompression
+  - requests>=2.31
+  - tqdm>=4.66   # Barre de progression pour le téléchargement initial
+
+  # Visualisation (étape 2 : plots des indicateurs)
+  - matplotlib>=3.8

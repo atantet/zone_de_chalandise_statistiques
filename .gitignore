@@ -1,0 +1,69 @@
+# ============================================================================
+# Données d'entrée et de sortie du pipeline
+# ============================================================================
+# Les entrées (exports QGIS) sont régénérables depuis QGIS ; pas la peine de
+# les versionner avec git.
+entree/
+
+# Les sorties (CSV agrégés) sont reproductibles via le script ; pas la peine.
+sortie/
+
+# Les plots sont reproductibles via le script ; pas la peine.
+images/
+
+# Cache local du téléchargement INSEE (294 Mo)
+# Le cache est de toute façon en dehors du repo (~/.cache/), mais on
+# l'exclut au cas où.
+.cache/
+
+# ============================================================================
+# Environnement Python
+# ============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+.python-version
+.venv/
+venv/
+env/
+
+# ============================================================================
+# Sauvegardes éditeurs
+# ============================================================================
+# Emacs
+*~
+\#*\#
+.\#*
+*.elc
+
+# Vim
+*.swp
+*.swo
+.*.swp
+.*.swo
+
+# VS Code
+.vscode/
+
+# JetBrains
+.idea/
+*.iml
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# ============================================================================
+# Système
+# ============================================================================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ============================================================================
+# Fichiers temporaires divers
+# ============================================================================
+*.tmp
+*.bak
+*.log
